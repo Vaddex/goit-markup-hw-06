@@ -78,16 +78,25 @@ ol {
 }
 .headder-container {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  margin-top: 24px;
-  margin-bottom: 24px;
 }
 .navigation-container {
   display: flex;
   align-items: center;
 }
 .logo-block {
-  margin-right: 76px;
+  display: block;
+  align-items: center;
+  margin-right: 120px;
+  text-transform: uppercase;
+  font-family: 'Raleway';
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  padding: 24px 0;
+  color: var(--primary-brand-color);
 }
 .nav-list-cont {
   display: flex;
@@ -99,7 +108,6 @@ ol {
     display: none;
   }
 }
-
 .navigation {
   font-family: 'Raleway', sans-serif;
   font-weight: 800;
@@ -110,7 +118,7 @@ ol {
   color: var(--logo-color);
 }
 @media only screen and (min-width: 1158px) {
-  .logo-box {
+  .logo-block {
     margin-right: 76px;
   }
 }
@@ -137,7 +145,12 @@ ol {
 .first-link-nav:focus {
   color: var(--primary-brand-color);
 }
+.active {
+  color: var(--ocean);
+  padding: 24px 0;
+}
 .main-pg.active::after {
+  display: block;
   content: '';
   position: absolute;
   bottom: -1px;
@@ -147,14 +160,12 @@ ol {
   border-radius: 2px;
   background-color: var(--ocean);
 }
-.active {
-  color: var(--ocean);
-}
 .address-style {
   font-style: normal;
 }
 .address-link-style {
-  font-size: 16px;
+  font-size: 12px;
+  font-weight: normal;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--primary-text-color);
@@ -1155,8 +1166,8 @@ ol {
   background-color: var(--primary-brand-color);
 }
 
-/* burger mobile menu */
-.burger-menu-close-btn {
+/* mobile menu */
+.menu-toggle {
   min-height: 32px;
   min-width: 32px;
   display: flex;
@@ -1169,28 +1180,27 @@ ol {
   outline: none;
 }
 .menu-toggle-icon {
-  stroke: var(--navy-blue-color);
+  stroke: var(--primary-link-color);
 }
-
 @media (min-width: 768px) {
-  .burger-menu-close-btn {
+  .menu-toggle {
     display: none;
   }
 }
-.burger-menu-close-btn:hover,
-.burger-menu-close-btn:focus {
+.menu-toggle:hover,
+.menu-toggle:focus {
   background-color: rgba(0, 0, 0, 0.1);
 }
-.burger-menu-close-btn {
+.menu-toggle.close {
   width: 24px;
   height: 24px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
 }
-.burger-menu-close-btn-icon {
+.menu-toggle-close-icon {
   fill: var(--navy-blue-color);
 }
-.burger-menu-box {
+.menu-container {
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -1208,10 +1218,10 @@ ol {
   transform: translateX(100%);
   transition: transform 250ms ease-in-out;
 }
-.burger-menu-box.is-open {
+.menu-container.is-open {
   transform: translateX(0);
 }
-.burger-menu-box .burger-menu-close-btn {
+.menu-container .menu-toggle {
   position: absolute;
   top: 24px;
   right: 24px;
